@@ -16,8 +16,8 @@ body {
 /* CONTENIDOR GENERAL */
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 94%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -494,6 +494,210 @@ body {
     .footer-links,
     .footer-contact {
         width: 100%;
+    }
+
+}
+
+
+/* ========================================
+   PÀGINA STOCK
+======================================== */
+
+/* INTRODUCCIÓ */
+.stock-intro {
+    background-color: #F1F3F5;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.stock-intro h1 {
+    color: #172B4D;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.stock-intro p {
+    color: #343A40;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* DISTRIBUCIÓ GENERAL */
+.stock-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 22px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    align-items: start;
+}
+
+/* COLUMNA DE FILTRES */
+.filters-sidebar {
+    background-color: #F1F3F5;
+    padding: 22px;
+    border-radius: 10px;
+}
+
+.filters-sidebar h2 {
+    color: #172B4D;
+    font-size: 21px;
+    margin-bottom: 25px;
+}
+
+.filters-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    color: #172B4D;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    padding: 0 10px;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #343A40;
+    font-size: 14px;
+}
+
+.filter-row {
+    display: flex;
+    gap: 8px;
+}
+
+/* BOTONS DELS FILTRES */
+.filter-button,
+.reset-button {
+    width: 100%;
+    min-height: 43px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-button {
+    border: none;
+    background-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.filter-button:hover {
+    background-color: #172B4D;
+}
+
+.reset-button {
+    border: 1px solid #172B4D;
+    background-color: #FFFFFF;
+    color: #172B4D;
+}
+
+.reset-button:hover {
+    background-color: #F1F3F5;
+}
+
+/* RESULTATS */
+.stock-results {
+    min-width: 0;
+}
+
+.stock-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stock-results-header h2 {
+    color: #172B4D;
+    font-size: 24px;
+}
+
+.stock-results-header p {
+    color: #343A40;
+    font-size: 14px;
+}
+
+/* GRAELLA DE VEHICLES */
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* ADAPTACIÓ A TAULETES */
+@media (max-width: 992px) {
+
+    .stock-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .vehicle-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* ADAPTACIÓ A MÒBILS */
+@media (max-width: 768px) {
+
+    .stock-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 30px;
+    }
+
+    .filters-sidebar {
+        width: 100%;
+    }
+
+    .stock-results-header {
+        flex-wrap: wrap;
+    }
+
+    .stock-intro h1 {
+        font-size: 30px;
+    }
+
+}
+
+/* MÒBILS ESTRETS */
+@media (max-width: 480px) {
+
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stock-results-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stock-results-header h2 {
+        font-size: 22px;
+    }
+
+    .filters-sidebar {
+        padding: 18px;
     }
 
 }

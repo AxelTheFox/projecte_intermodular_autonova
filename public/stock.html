@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles d'ocasió | COCHES10</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- CAPÇALERA -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">COCHES<span>10</span></a>
+            <nav class="main-nav">
+                <a href="index.html">Inici</a>
+                <a href="stock.html">Vehicles</a>
+                <a href="sell.html">Ven el teu cotxe</a>
+                <a href="contact.html">Contacte</a>
+            </nav>
+            <a href="sell.html" class="header-button">Ven el teu cotxe</a>
+        </div>
+    </header>
+    <main class="stock-page">
+        <section class="stock-intro">
+            <div class="container">
+                <h1>Els nostres vehicles</h1>
+                <p>Descobreix la nostra selecció de vehicles d'ocasió i troba el cotxe que millor s'adapta a tu.</p>
+            </div>
+        </section>
+        <section class="stock-layout container">
+            <aside class="filters-sidebar">
+                <h2>Filtrar vehicles</h2>
+                <form class="filters-form">
+                    <div class="filter-group">
+                        <label for="filter-brand">Marca</label>
+                        <select id="filter-brand" name="brand">
+                            <option value="">Totes les marques</option>
+                            <option value="Audi">Audi</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="Seat">SEAT</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Any de fabricació</label>
+                        <div class="filter-row">
+                            <input type="number" name="minYear" placeholder="Des de" min="1980">
+                            <input type="number" name="maxYear" placeholder="Fins a" min="1980">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Preu (€)</label>
+                        <div class="filter-row">
+                            <input type="number" name="minPrice" placeholder="Mínim" min="0">
+                            <input type="number" name="maxPrice" placeholder="Màxim" min="0">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-km">Quilometratge màxim</label>
+                        <input type="number" id="filter-km" name="maxKm" placeholder="Ex. 100000" min="0">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-fuel">Combustible</label>
+                        <select id="filter-fuel" name="fuel">
+                            <option value="">Tots</option>
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Dièsel">Dièsel</option>
+                            <option value="Híbrid">Híbrid</option>
+                            <option value="Elèctric">Elèctric</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-transmission">Canvi</label>
+                        <select id="filter-transmission" name="transmission">
+                            <option value="">Tots</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Automàtic">Automàtic</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="filter-button">Aplicar filtres</button>
+                    <button type="reset" class="reset-button">Netejar filtres</button>
+                </form>
+            </aside>
+            <div class="stock-results">
+                <div class="stock-results-header">
+                    <h2>Vehicles disponibles</h2>
+                    <p id="vehicle-count">0 vehicles trobats</p>
+                </div>
+                <div class="vehicle-grid" id="vehicle-grid">
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PEU DE PÀGINA -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">COCHES<span>10</span></a>
+                    <p>El teu concessionari de confiança. Vehicles d'ocasió seleccionats per a tu.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navegació</h3>
+                    <a href="index.html">Inici</a>
+                    <a href="stock.html">Vehicles</a>
+                    <a href="sell.html">Ven el teu cotxe</a>
+                    <a href="contact.html">Contacte</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacte</h3>
+                    <p>Estem ací per ajudar-te.</p>
+                    <a href="contact.html">Contacta amb nosaltres</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 COCHES10. Tots els drets reservats.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
