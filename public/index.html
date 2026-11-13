@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCHES10 | Vehicles d'ocasió</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">COCHES<span>10</span></a>
+            <nav class="main-nav">
+                <a href="index.html">Inici</a>
+                <a href="stock.html">Vehicles</a>
+                <a href="sell.html">Ven el teu cotxe</a>
+                <a href="contact.html">Contacte</a>
+            </nav>
+            <a href="sell.html" class="header-button">Ven el teu cotxe</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-label">EL TEU CONCESSIONARI DE CONFIANÇA</span>
+                    <h1>Troba el cotxe que <span>busques</span></h1>
+                    <p>
+                        Descobreix la nostra selecció de vehicles d'ocasió. Qualitat, confiança
+                        i transparència per ajudar-te a trobar el teu pròxim cotxe.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="stock.html" class="primary-button">Veure vehicles</a>
+                        <a href="sell.html" class="secondary-button">Ven el teu cotxe</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/hero-car.jpg" alt="Vehicle d'ocasió del concessionari COCHES10">
+                </div>
+            </div>
+        </section>
+        <section class="search-section">
+            <div class="container">
+                <div class="search-heading">
+                    <h2>Troba el teu pròxim cotxe</h2>
+                    <p>Utilitza els filtres per trobar el vehícle ideal.</p>
+                </div>
+                <form class="car-search">
+                    <div class="form-group">
+                        <label for="brand">Marca</label>
+                        <select id="brand" name="brand">
+                            <option value="">Totes les marques</option>
+                            <option value="Audi">Audi</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="Seat">Seat</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Any de fabricació</label>
+                        <input type="number" id="year" name="year" placeholder="Ex: 2014" min="1980" max="2099">
+                    </div>
+                    <div class="form-group">
+                        <label for="max-price">Preu màxim (€)</label>
+                        <input type="number" id="max-price" name="maxPrice" placeholder="Ex: 20000" min="0">
+                    </div>
+                    <button type="submit" class="search-button">Buscar vehicles</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 COCHES10. Tots els drets reservats.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
