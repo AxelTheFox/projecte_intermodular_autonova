@@ -1,11 +1,9 @@
 const sellForm = document.getElementById('sell-form');
 
-sellForm.addEventListener('submit', (event) => {
+sellForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-
     const formData = new FormData(sellForm);
-
-    const vehicleData = {
+    const sellData = {
         brand: formData.get('brand'),
         model: formData.get('model'),
         year: formData.get('year'),
@@ -17,19 +15,25 @@ sellForm.addEventListener('submit', (event) => {
         registration: formData.get('registration'),
         price: formData.get('price'),
         description: formData.get('description'),
-        images: formData.getAll('images')
-    }
-
-    const ownerData = {
         firstName: formData.get('firstName'),
         lastName: formData.get('lastName'),
         email: formData.get('email'),
         phone: formData.get('phone')
     };
 
-    console.log('Dades del vehicle preparades:', {
-        ...vehicleData, images: `${vehicleData.images.length} fotografies`
-    });
+    try {
+        const response = await fetch('/api/sell', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(sellData)
+        });
 
-    console.log('Dades del propietari prearades correctament.');
+        const result = await response.json();
+        if (!response.ok) { throw new Error(result.message); }
+
+        alert('La teua sol·licitud s\'ha enviat correctament!');
+        console.log('Sol·licitud guardada:', result);
+        sellForm.reset();
+    } catch (error) {
+        console.error('Error en enviar la sol·licitud:', error);
+        alert('No s\'ha pogut enviar la sol·licitud. Torna-ho a intentar.');
+    }
 });
