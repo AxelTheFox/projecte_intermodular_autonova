@@ -701,3 +701,337 @@ body {
     }
 
 }
+
+
+/* ========================================
+   PÀGINA VEN EL TEU COTXE
+======================================== */
+
+/* INTRODUCCIÓ */
+.sell-intro {
+    background-color: #F1F3F5;
+    padding: 45px 0;
+    text-align: center;
+}
+
+.sell-intro h1 {
+    color: #172B4D;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.sell-intro p {
+    color: #343A40;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* CONTENIDOR DEL FORMULARI */
+.sell-form-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.sell-form {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* BLOCS DEL FORMULARI */
+.sell-form-block {
+    background-color: #FFFFFF;
+    border: 1px solid #E1E5EA;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.sell-form-block h2 {
+    color: #172B4D;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.sell-form-block > p {
+    color: #6B7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* DISTRIBUCIÓ DELS CAMPS */
+.sell-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.sell-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.sell-field label {
+    color: #172B4D;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sell-field input,
+.sell-field select,
+.sell-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #343A40;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.sell-field input,
+.sell-field select {
+    min-height: 45px;
+}
+
+.sell-field textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.sell-field input:focus,
+.sell-field select:focus,
+.sell-field textarea:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+/* DESCRIPCIÓ I FOTOGRAFIES */
+.sell-description-field,
+.sell-images-field {
+    margin-top: 25px;
+}
+
+.sell-field small {
+    color: #6B7280;
+    font-size: 12px;
+}
+
+/* ENVIAMENT */
+.sell-submit-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.sell-submit-section p {
+    color: #343A40;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.sell-submit-button {
+    display: inline-block;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563EB;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sell-submit-button:hover {
+    background-color: #172B4D;
+}
+
+.sell-submit-section small {
+    display: block;
+    margin-top: 15px;
+    color: #6B7280;
+    font-size: 12px;
+}
+
+/* RESPONSIVE: TAULETES */
+@media (max-width: 768px) {
+
+    .sell-intro h1 {
+        font-size: 30px;
+    }
+
+    .sell-form-section {
+        padding-top: 25px;
+    }
+
+    .sell-form-block {
+        padding: 25px 20px;
+    }
+
+}
+
+/* RESPONSIVE: MÒBILS */
+@media (max-width: 480px) {
+
+    .sell-fields-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .sell-form-block {
+        padding: 20px 16px;
+    }
+
+    .sell-form-block h2 {
+        font-size: 19px;
+    }
+
+    .sell-submit-button {
+        width: 100%;
+    }
+
+}
+
+/* ========================================
+   PÀGINA CONTACTE
+======================================== */
+
+/* Introducció */
+.contact-intro {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.contact-intro h1 {
+    color: #172B4D;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.contact-intro p {
+    color: #343A40;
+    font-size: 1rem;
+}
+
+/* Contingut principal */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    margin: 20px auto 50px;
+}
+
+/* Formulari */
+.contact-form-container,
+.contact-information {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form-container h2,
+.contact-information h2 {
+    color: #172B4D;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-field label {
+    color: #343A40;
+    font-weight: 600;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.contact-field textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    outline: none;
+    border-color: #2563EB;
+}
+
+/* Informació de contacte */
+.contact-information-item {
+    margin-bottom: 22px;
+}
+
+.contact-information-item h3 {
+    color: #172B4D;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.contact-information-item p {
+    color: #343A40;
+    line-height: 1.5;
+}
+
+/* Mapa */
+.contact-map-section {
+    margin: 40px auto 60px;
+}
+
+.contact-map-section h2 {
+    color: #172B4D;
+    margin-bottom: 18px;
+}
+
+.contact-map-placeholder {
+    min-height: 300px;
+    background-color: #F1F3F5;
+    border: 1px solid #CED4DA;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: #343A40;
+}
+
+/* Adaptació a mòbils i tauletes */
+@media (max-width: 768px) {
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-intro h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-form-container,
+    .contact-information {
+        padding: 22px;
+    }
+
+}

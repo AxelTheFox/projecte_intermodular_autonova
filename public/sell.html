@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ven el teu cotxe | COCHES10</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">COCHES<span>10</span></a>
+            <nav class="main-nav">
+                <a href="index.html">Inici</a>
+                <a href="stock.html">Vehicles</a>
+                <a href="sell.html">Ven el teu cotxe</a>
+                <a href="contact.html">Contacte</a>
+            </nav>
+            <a href="sell.html" class="header-button">Ven el teu cotxe</a>
+        </div>
+    </header>
+    <main class="sell-page">
+        <section class="sell-intro">
+            <div class="container">
+                <h1>Ven el teu cotxe</h1>
+                <p>
+                    Vols vendre el teu vehicle?
+                    Envia'ns les seues dades i el nostre equip estudiarà la teua proposta.
+                </p>
+            </div>
+        </section>
+        <section class="sell-form-section container">
+            <form id="sell-form" class="sell-form">
+                <div class="sell-form-block">
+                    <h2>Informació del vehicle</h2>
+                    <p>Indica'ns les característiques principals del cotxe que vols vendre.</p>
+                    <div class="sell-fields-grid">
+                        <div class="sell-field">
+                            <label for="brand">Marca *</label>
+                            <input type="text" id="brand" name="brand" placeholder="Ex: Seat" required>
+                        </div>
+                        <div class="sell-field">
+                            <label for="model">Model *</label>
+                            <input type="text" id="model" name="model" placeholder="Ex: León" required>
+                        </div>
+                        <div class="sell-field">
+                            <label for="year">Any de fabricació *</label>
+                            <input type="number" id="year" name="year" min="1980" max="2099" placeholder="Ex: 2021" required>
+                        </div>
+                        <div class="sell-field">
+                            <label for="engine">Motor</label>
+                            <input type="text" id="engine" name="engine" placeholder="Ex: 1.5 TSI">
+                        </div>
+                        <div class="sell-field">
+                            <label for="power">Potència (CV)</label>
+                            <input type="number" id="power" name="power" min="1" placeholder="Ex: 150">
+                        </div>
+                        <div class="sell-field">
+                            <label for="kilometers">Quilometratge *</label>
+                            <input type="number" id="kilometers" name="kilometers" min="0" placeholder="Ex: 65000" required>
+                        </div>
+                        <div class="sell-field">
+                            <label for="fuel">Combustible *</label>
+                            <select id="fuel" name="fuel" required>
+                                <option value="">Selecciona una opció</option>
+                                <option value="Gasolina">Gasolina</option>
+                                <option value="Dièsel">Dièsel</option>
+                                <option value="Híbrid">Híbrid</option>
+                                <option value="Elèctric">Elèctric</option>
+                                <option value="GLP">GLP</option>
+                                <option value="Altres">Altres</option>
+                            </select>
+                        </div>
+                        <div class="sell-field">
+                            <label for="transmission">Canvi *</label>
+                            <select id="transmission" name="transmission" required>
+                                <option value="">Selecciona una opció</option>
+                                <option value="Manual">Manual</option>
+                                <option value="Automàtic">Automàtic</option>
+                            </select>
+                        </div>
+                        <div class="sell-field">
+                            <label for="registration">Matrícula</label>
+                            <input type="text" id="registration" name="registration" placeholder="Ex: 1234 ABC">
+                        </div>
+                        <div class="sell-field">
+                            <label for="price">Preu que demanes (€) *</label>
+                            <input type="number" id="price" name="price" min="1" placeholder="Ex: 15000" required>
+                        </div>
+                    </div>
+                    <div class="sell-field sell-description-field">
+                        <label for="description">Descripció del vehicle</label>
+                        <textarea id="description" name="description" rows="5" placeholder="Explica'ns l'estat del vehicle, equipament, manteniment..."></textarea>
+                    </div>
+                    <div class="sell-field sell-images-field">
+                        <label for="images">Fotografies del vehicle</label>
+                        <input type="file" id="images" name="images" accept="image/*" multiple>
+                        <small>Pots seleccionar diverses fotografies del cotxe.</small>
+                    </div>
+                </div>
+                <div class="sell-form-block">
+                    <h2>Les teues dades de contacte</h2>
+                    <p>Necessitem aquestes dades per poder contactar amb tu i valorar la proposta.</p>
+                    <div class="sell-fields-grid">
+                        <div class="sell-field">
+                            <label for="firstName">Nom *</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="El teu nom" required>
+                        </div>
+                        <div class="sell-field">
+                            <label for="lastName">Cognoms *</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Els teus cognoms" required>
+                        </div>
+                        <div class="sell-field">
+                            <label for="email">Correu electrònic *</label>
+                            <input type="email" id="email" name="email" placeholder="exemple@correu.com" required>
+                        </div>
+                        <div class="sell-field">
+                            <label for="phone">Telèfon *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Ex: 600123456" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="sell-submit-section">
+                    <p>En enviar el formulari, el concessionari rebrà la teua sol·licitud per estudiar-la.</p>
+                    <button type="submit" class="sell-submit-button">Enviar sol·licitud</button>
+                    <small>* Camps obligatoris</small>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">COCHES<span>10</span></a>
+                    <p>El teu concessionari de confiança. Vehicles d'ocasió seleccionats per a tu.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navegació</h3>
+                    <a href="index.html">Inici</a>
+                    <a href="stock.html">Vehicles</a>
+                    <a href="sell.html">Ven el teu cotxe</a>
+                    <a href="contact.html">Contacte</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacte</h3>
+                    <p>Estem ací per ajudar-te.</p>
+                    <a href="contact.html">Contacta amb nosaltres</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 COCHES10. Tots els drets reservats.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/sell.js"></script>
+</body>
+</html>
