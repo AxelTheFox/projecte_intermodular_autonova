@@ -3,7 +3,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
-import sellRoutes from './routes/sellRoutes.js'
+import sellRoutes from './routes/sellRoutes.js';
+import contactRoutes from './routes/contactRoutes.js'
 
 dotenv.config();
 
@@ -11,7 +12,8 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/sell', sellRoutes)
+app.use('/api/sell', sellRoutes);
+app.use('/api/contact', contactRoutes);
 
 const PORT = process.env.PORT;
 const __filename = fileURLToPath(import.meta.url);
