@@ -56,7 +56,6 @@ router.use((error, req, res, next) => {
     }
 
     if (error.message?.includes("Només s'accepten imatges")) return res.status(400).json({ message: error.message });
-
     next(error);
 });
 

@@ -17,16 +17,16 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/sell', sellRoutes);
-app.use('/api/contact', contactRoutes);
-app.use('/api/vehicles', vehicleRoutes);
-app.use('/api/admin', adminRoutes);
+app.use("/api/sell", sellRoutes);
+app.use("/api/contact", contactRoutes);
+app.use("/api/vehicles", vehicleRoutes);
+app.use("/api/admin", adminRoutes);
 
 connectDB().then(() => {
     const publicPath = path.join(__dirname, "../public");
     const uploadsPath = path.join(__dirname, "../uploads"); 
     app.use(express.static(publicPath));
     app.use("/uploads", express.static(uploadsPath));
-    app.get('/api/health', (req, res) => { res.json({ status: 'ok', message: 'Servidor funcionant correctament' }) });
+    app.get("/api/health", (req, res) => { res.json({ status: "ok", message: "Servidor funcionant correctament" }) });
     app.listen(PORT, () => { console.log(`Servidor disponible en http://localhost:${PORT}`)});
 });

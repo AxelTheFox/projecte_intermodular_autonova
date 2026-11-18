@@ -12,8 +12,8 @@ router.post('/', async (req, res) => {
         await newMessage.save();
         res.status(201).json({ message: 'Missatge enviat correctament.', messageId: newMessage._id })
     } catch (error) {
-        console.error('Error en guardar el missatge:', error);
-        res.status(500).json ({ message: 'Error intern en enviar el missatge.'});
+        console.error('Error al guardar el missatge:', error);
+        res.status(500).json ({ message: 'Error intern al enviar el missatge.'});
     }
 });
 
