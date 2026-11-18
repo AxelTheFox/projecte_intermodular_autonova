@@ -102,3 +102,19 @@ if (carousel) {
 
     loadFeaturedVehicles();
 }
+
+const searchForm = document.querySelector(".car-search");
+if (searchForm) {
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const brand = document.getElementById("brand").value;
+        const year = document.getElementById("year").value;
+        const maxPrice = document.getElementById("max-price").value;
+        const searchParams = new URLSearchParams();
+        
+        if (brand) searchParams.set("brand", brand);
+        if (year) searchParams.set("year", year);
+        if (maxPrice) searchParams.set("maxPrice", maxPrice);
+        window.location.href = `stock.html?${searchParams.toString()}`;
+    });
+}
