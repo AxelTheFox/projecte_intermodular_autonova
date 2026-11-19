@@ -1814,3 +1814,26 @@ PÀGINA CONTACTE
         height: 300px;
     }
 }
+
+/* Fotografies de les sol·licituds d'administració */
+.request-images {
+    margin-top: 20px;
+}
+
+.request-images h4 {
+    margin-bottom: 12px;
+}
+
+.request-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.request-images-grid img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}

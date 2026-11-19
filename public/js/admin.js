@@ -175,8 +175,25 @@ async function loadRequests() {
             addDetail(ownerDetails, "Email", owner.email);
             addDetail(ownerDetails, "Telèfon", owner.phone);
             details.append(vehicleDetails, ownerDetails);
+            // Mostrar les fotografies del vehicle
+            if (Array.isArray(request.images) && request.images.length > 0) {
+                const imagesSection = createElement("div", "request-images");
+                imagesSection.appendChild(createElement("h4", "", "Fotografies del vehicle"));
+                const imagesGrid = createElement("div", "request-images-grid");
+                request.images.forEach((imageUrl, index) => {
+                    if (typeof imageUrl !== "string" || !imageUrl.trim()) return;
+                    const image = document.createElement("img");
+                    image.src = imageUrl;
+                    image.alt = `Fotografia ${index + 1} del vehicle`;
+                    image.loading = "lazy";
+                    imagesGrid.appendChild(image);
+                });
+                if (imagesGrid.children.length > 0) {
+                    imagesSection.appendChild(imagesGrid);
+                    card.appendChild(imagesSection);
+                }
+            }
             card.appendChild(details);
-
             if (status === "pending") {
                 const actions = createElement("div", "request-card-actions");
                 const acceptButton = createElement("button", "btn-accept", "Acceptar");
@@ -186,11 +203,9 @@ async function loadRequests() {
                 acceptButton.addEventListener("click", () => {
                     manageRequest(request._id, "accept", acceptButton, rejectButton);
                 });
-
                 rejectButton.addEventListener("click", () => {
                     manageRequest(request._id, "reject", acceptButton, rejectButton);
                 });
-
                 actions.append(acceptButton, rejectButton);
                 card.appendChild(actions);
             }
