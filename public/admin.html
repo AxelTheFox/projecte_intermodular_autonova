@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administració | AUTONOVA</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        [hidden] {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -13,25 +18,45 @@
             <nav class="nav">
                 <a href="index.html">Veure la web</a>
                 <a href="stock.html">Stock</a>
+                <button type="button" id="logout-button" hidden>Tancar sessió</button>
             </nav>
         </div>
     </header>
     <main class="admin-page">
-        <section class="admin-intro">
-            <div class="container">
-                <h1>Panell d'Administració</h1>
-                <p>Gestiona les sol·licituds de venda rebudes pel concessionari.</p>
-            </div>
-        </section>
-        <section class="admin-content container">
+        <section id="login-section" class="admin-content container">
             <div class="admin-section-header">
-                <h2>Sol·licituds de venda</h2>
-                <p id="request-count">0 sol·licituds</p>
+                <h1>Accés d'administració</h1>
+                <p>Inicia sessió per a gestionar les sol·licituds de venda.</p>
             </div>
-            <div id="request-list" class="request-list">
-
-            </div>
+            <form id="login-form" class="contact-form">
+                <div class="form-group">
+                    <label for="admin-username">Usuari</label>
+                    <input type="text" id="admin-username" name="username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Contrasenya</label>
+                    <input type="password" id="admin-password" name="password" autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="btn-primary" id="login-button">Iniciar sessió</button>
+                <p id="login-error" role="alert" hidden></p>
+            </form>
         </section>
+        <div id="dashboard-section" hidden>
+            <section class="admin-intro">
+                <div class="container">
+                    <h1>Panell d'Administració</h1>
+                    <p>Gestiona les sol·licituds de venda rebudes pel concessionari.</p>
+                </div>
+            </section>
+            <section class="admin-content container">
+                <div class="admin-section-header">
+                    <h2>Sol·licituds de venda</h2>
+                    <p id="request-count">0 sol·licituds</p>
+                </div>
+                <div id="request-list" class="request-list">
+                </div>
+            </section>
+        </div>
     </main>
     <footer class="footer">
         <div class="container">

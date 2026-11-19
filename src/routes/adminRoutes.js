@@ -1,8 +1,10 @@
+import { requireAdmin } from '../middlewares/authMiddleware.js';
 import express from 'express';
 import SellRequest from '../models/SellRequest.js';
 import Vehicle from '../models/Vehicle.js';
 
 const router = express.Router();
+router.use(requireAdmin);
 
 router.get('/requests', async (req, res) => {
     try {
@@ -18,7 +20,7 @@ router.put('/requests/:id/accept', async (req, res) => {
     try {
         const request = await SellRequest.findById(req.params.id);
         if (!request) return res.status(404).json ({ message: "No s'ha trobat la sol·licitud." });
-        if (request.status !== 'pending') return res.stauts(400).json ({ message: "Aquesta sol·licitud ja ha sigut gestionada." });
+        if (request.status !== 'pending') return res.status(400).json ({ message: "Aquesta sol·licitud ja ha sigut gestionada." });
 
         const newVehicle = new Vehicle({
             brand: request.vehicle.brand,
@@ -48,7 +50,7 @@ router.put('/requests/:id/reject', async (req, res) => {
     try {
         const request = await SellRequest.findById(req.params.id);
         if (!request) return res.status(404).json ({ message: "No s'ha trobat la sol·licitud." });
-        if (request.status !== 'pending') return res.stauts(400).json ({ message: "Aquesta sol·licitud ja ha sigut gestionada." });
+        if (request.status !== 'pending') return res.status(400).json ({ message: "Aquesta sol·licitud ja ha sigut gestionada." });
         request.status = 'rejected';
         await request.save();
         res.status(200).json({ message: "Sol·licitud denegada correctament." })
