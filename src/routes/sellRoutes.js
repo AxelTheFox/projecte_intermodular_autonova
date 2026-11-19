@@ -1,10 +1,10 @@
 import express from "express";
 import SellRequest from "../models/SellRequest.js";
-import upload from "../config/multer.js";
+import upload, { validateUploadedImages } from "../config/multer.js";
 
 const router = express.Router();
 
-router.post('/', upload.array("images", 5), async (req, res) => {
+router.post('/', upload.array("images", 5), validateUploadedImages, async (req, res) => {
 
     try {
 
