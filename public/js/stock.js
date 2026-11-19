@@ -1,4 +1,3 @@
-
 const vehicleGrid = document.getElementById("vehicle-grid");
 const vehicleCount = document.getElementById("vehicle-count");
 const filtersForm = document.querySelector(".filters-form");
@@ -94,7 +93,7 @@ function renderVehicles(vehicles) {
             ? vehicle.images[0]
             : null;
 
-        image.src = typeof firstImage === "string" && firstImage.startsWith("/uploads/vehicles/")
+        image.src = typeof firstImage === "string" && firstImage.trim()
             ? firstImage
             : "assets/images/hero-car.jpg";
 
