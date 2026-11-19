@@ -33,20 +33,17 @@ const upload = multer({ storage, fileFilter, limits: { fileSize: 5 * 1024 * 1024
 
 export const validateUploadedImages = async (req, res, next) => {
     const files = req.files || [];
-
     try {
         const allowedExtensions = { "image/jpeg": [".jpg", ".jpeg"], "image/png": [".png"], "image/webp": [".webp"] };
         for (const file of files) {
             const detectedType = await fileTypeFromFile(file.path);
             const validType = detectedType && allowedExtensions[detectedType.mime]?.includes(path.extname(file.originalname).toLowerCase());
-
             if (!validType) {
                 await Promise.allSettled(files.map(file => unlink(file.path)));
                 return res.status(400).json({ message: "Una de les imatges no té un format vàlid." });
             }
         }
         next();
-
     } catch (error) {
         await Promise.allSettled(files.map(file => unlink(file.path)));
         console.error("Error en verificar les imatges:", error);

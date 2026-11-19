@@ -27,6 +27,6 @@ const sellRequestSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
-
 const sellRequest = mongoose.models.sellRequest || mongoose.model('SellRequest', sellRequestSchema);
+
 export default sellRequest;

@@ -4,6 +4,5 @@ export const requireAdmin = (req, res, next) => {
             message: "Accés no autoritzat. Inicia sessió com a administrador."
         });
     }
-
     next();
 };

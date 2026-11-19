@@ -57,6 +57,6 @@ router.post("/logout", (req, res) => {
         res.status(200).json({ message: "Sessió tancada correctament."});
     });
 });
-
 router.get("/me", (req, res) => { res.status(200).json({ isAdmin: Boolean(req.session?.isAdmin) }); });
+
 export default router;
