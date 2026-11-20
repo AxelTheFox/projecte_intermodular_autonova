@@ -17,7 +17,7 @@ if (carousel) {
             : null;
 
         const validImage = typeof firstImage === "string" &&
-            /^\/uploads\/vehicles\/[A-Za-z0-9_-]+\.(jpg|jpeg|png|webp)$/i.test(firstImage);
+            (firstImage.startsWith("https://res.cloudinary.com/") || firstImage.startsWith("/uploads/vehicles/"));
 
         return validImage
             ? firstImage
