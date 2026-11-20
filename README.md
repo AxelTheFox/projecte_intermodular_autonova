@@ -102,6 +102,7 @@ projecte_intermodular_autonova/
 ## Desplegament
 
 L'aplicació està desplegada amb Render, utilitza MongoDB Atlas com a base de dades i Cloudinary per a l'emmagatzematge de fotografies.
+Web pública de AUTONOVA: https://autonova-tcoz.onrender.com/
 
 ---
 
