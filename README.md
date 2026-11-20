@@ -2,103 +2,108 @@
 
 **Plataforma web de compravenda de vehicles d'ocasió**
 
----
+## Descripció
 
 AUTONOVA és una aplicació web desenvolupada com a projecte acadèmic que simula el funcionament d'un concessionari de vehicles d'ocasió.
 
-La plataforma permet consultar els vehicles disponibles, buscar cotxes mitjançant diferents filtres i enviar sol·licituds per vendre vehicles al concessionari.
-
-També incorpora un apartat d'administració per gestionar les sol·licituds rebudes i controlar els vehicles disponibles.
+Permet consultar vehicles disponibles, aplicar filtres de cerca, enviar sol·licituds de venda i contactar amb el concessionari. També incorpora un panell d'administració per gestionar les sol·licituds rebudes.
 
 ## Funcionalitats principals
 
 - Pàgina d'inici amb carrusel de vehicles.
-- Catàleg de vehicles disponibles.
-- Cerca i filtres per marca, any, preu, quilometratge i característiques.
-- Fitxa individual de cada vehicle amb fotografies i especificacions.
-- Formulari per enviar sol·licituds de venda de vehicles.
+- Catàleg amb cerca i filtres.
+- Fitxes de vehicles amb fotografies i especificacions.
+- Formulari de sol·licitud de venda amb pujada de fotografies.
 - Formulari de contacte.
-- Panell d'administració per gestionar les sol·licituds.
-- Emmagatzematge de dades mitjançant MongoDB.
+- Panell d'administració amb autenticació.
+- Gestió de sol·licituds i incorporació de vehicles acceptats a l'estoc.
 
 ## Tecnologies utilitzades
 
-- HTML5
-- CSS3
-- JavaScript
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Multer
-- Express Session
-- bcryptjs
+- **Frontend:** HTML5, CSS3 i JavaScript.
+- **Backend:** Node.js i Express.js.
+- **Base de dades:** MongoDB i Mongoose.
+- **Autenticació i seguretat:** Express Session, Connect-Mongo i bcryptjs.
+- **Imatges:** Multer i Cloudinary.
+- **Desplegament:** Render.
+- **Control de versions:** Git i GitHub.
 
 ## Requisits previs
 
-Per executar el projecte en local és necessari disposar de:
-
 - Node.js i npm.
-- Un servidor MongoDB o un compte de MongoDB Atlas.
-- Git (opcional, per clonar el repositori).
+- Compte de MongoDB Atlas.
+- Compte de Cloudinary.
+- Git (opcional).
 
 ## Instal·lació
 
 1. Clonar el repositori:
 
-   ```bash
-   git clone https://github.com/AxelTheFox/projecte_intermodular_autonova.git
-   ```
+```bash
+git clone https://github.com/AxelTheFox/projecte_intermodular_autonova.git
+```
 
-2. Entrar en la carpeta del projecte:
+2. Entrar en la carpeta i instal·lar les dependències:
 
-   ```bash
-   cd projecte_intermodular_autonova
-   ```
+```bash
+cd projecte_intermodular_autonova
+npm install
+```
 
-3. Instal·lar les dependències:
+3. Crear el fitxer `.env` a partir de `.env.example` i configurar les variables necessàries:
 
-   ```bash
-   npm install
-   ```
+- `PORT`
+- `MONGO_URI`
+- `ADMIN_USERNAME`
+- `ADMIN_PASSWORD_HASH`
+- `SESSION_SECRET`
+- `NODE_ENV`
+- `CLOUDINARY_CLOUD_NAME`
+- `CLOUDINARY_API_KEY`
+- `CLOUDINARY_API_SECRET`
 
-4. Crear un fitxer `.env` a partir de `.env.example` i configurar les variables d'entorn. Cal introduir la cadena de connexió de MongoDB i configurar les credencials de l'administrador.
+4. Iniciar el servidor:
 
-5. Iniciar el servidor:
+```bash
+npm run dev
+```
 
-   ```bash
-   npm run dev
-   ```
+5. Obrir l'aplicació en el navegador:
 
-6. Obrir el navegador i accedir a:
+```text
+http://localhost:3000
+```
 
-   `http://localhost:3000`
+Panell d'administració:
+
+```text
+http://localhost:3000/admin.html
+```
+
+**Important:** El fitxer `.env` conté informació privada i no s'ha de pujar al repositori.
 
 ## Estructura del projecte
 
 ```text
 projecte_intermodular_autonova/
-├── public/
-│   ├── css/
-│   ├── js/
-│   └── assets/
-├── uploads/
-│   └── vehicles/
+├── public/          # Pàgines, estils, scripts i imatges
 ├── src/
-│   ├── config/
-│   ├── models/
-│   ├── routes/
-│   └── server.js
+│   ├── config/      # Configuració de serveis
+│   ├── middlewares/ # Control d'accés
+│   ├── models/      # Models de MongoDB
+│   ├── routes/      # Rutes de l'API
+│   └── server.js    # Servidor principal
 ├── .env.example
 ├── .gitignore
 ├── package.json
-├── package-lock.json
 └── README.md
 ```
 
----
+## Desplegament
 
-Projecte acadèmic en desenvolupament.
+L'aplicació està desplegada amb Render, utilitza MongoDB Atlas com a base de dades i Cloudinary per a l'emmagatzematge de fotografies.
+
+---
 
 ## Avís
 
