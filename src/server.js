@@ -49,9 +49,7 @@ app.use("/api/admin", adminRoutes);
 
 connectDB().then(() => {
     const publicPath = path.join(__dirname, "../public");
-    const uploadsPath = path.join(__dirname, "../uploads"); 
     app.use(express.static(publicPath));
-    app.use("/uploads", express.static(uploadsPath));
     app.get("/api/health", (req, res) => { res.json({ status: "ok", message: "Servidor funcionant correctament" }) });
     app.listen(PORT, () => { console.log(`Servidor disponible en http://localhost:${PORT}`)});
 });

@@ -12,17 +12,9 @@ if (carousel) {
     let autoPlay;
 
     function getVehicleImage(vehicle) {
-        const firstImage = Array.isArray(vehicle.images)
-            ? vehicle.images[0]
-            : null;
-
-        const validImage = typeof firstImage === "string" &&
-            (firstImage.startsWith("https://res.cloudinary.com/") || firstImage.startsWith("/uploads/vehicles/"));
-
-        return validImage
-            ? firstImage
-            : "assets/images/hero-car.jpg";
-    }
+    if (!Array.isArray(vehicle.images)) return null;
+    return vehicle.images.find(image => typeof image === "string" && image.startsWith("https://res.cloudinary.com/")) || null;
+}
 
     function showVehicle(index) {
         if (vehicles.length === 0) return;
@@ -93,7 +85,7 @@ if (carousel) {
             if (!response.ok) throw new Error("No s'han pogut carregar els vehicles.");
             const data = await response.json();
             if (!Array.isArray(data)) throw new Error("Les dades dels vehicles no són vàlides.");
-            vehicles = data;
+            vehicles = data.filter(vehicle => getVehicleImage(vehicle));
             if (vehicles.length === 0) {
                 title.textContent = "Pròximament, nous vehicles disponibles";
                 price.textContent = "";
