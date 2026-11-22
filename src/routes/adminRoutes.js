@@ -66,17 +66,9 @@ router.put("/requests/:id/accept", async (req, res) => {
 router.put("/requests/:id/reject", async (req, res) => {
     try {
         const request = await SellRequest.findOneAndUpdate(
-            {
-                _id: req.params.id,
-                status: "pending"
-            },
-            {
-                $set: { status: "rejected" }
-            },
-            {
-                new: true,
-                runValidators: true
-            }
+            { _id: req.params.id, status: "pending" },
+            { $set: { status: "rejected" } },
+            { new: true, runValidators: true }
         );
 
         if (!request) {
