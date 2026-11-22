@@ -35,8 +35,7 @@ function displayGallery(vehicle) {
 
     vehicle.images.forEach((image, index) => {
         if (typeof image !== "string" || !image.trim()) return;
-        const validImage = image.startsWith("https://") || image.startsWith("/uploads/vehicles/");
-        if (!validImage) return;
+        if (!image.startsWith("https://")) return;
         const img = document.createElement("img");
         img.src = image;
         img.alt = `Fotografia ${index + 1} de ${vehicle.brand || ""} ${vehicle.model || ""}`.trim();

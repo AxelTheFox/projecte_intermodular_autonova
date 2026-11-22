@@ -95,7 +95,7 @@ function renderVehicles(vehicles) {
 
         image.src = typeof firstImage === "string" && firstImage.trim()
             ? firstImage
-            : "assets/images/hero-car.jpg";
+            : "assets/images/hero-car.jpg"; // arreglar
 
         image.alt = `${vehicle.brand || ""} ${vehicle.model || ""}`.trim();
         imageContainer.appendChild(image);

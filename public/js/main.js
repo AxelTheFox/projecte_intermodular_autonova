@@ -13,7 +13,7 @@ if (carousel) {
 
     function getVehicleImage(vehicle) {
     if (!Array.isArray(vehicle.images)) return null;
-    return vehicle.images.find(image => typeof image === "string" && image.startsWith("https://res.cloudinary.com/")) || null;
+    return vehicle.images.find(image => typeof image === "string" && image.startsWith("https://")) || null;
 }
 
     function showVehicle(index) {
